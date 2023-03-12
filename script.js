@@ -50,3 +50,15 @@ drawLine = (x, y, x1, y1) => {
   ctx.lineWidth = size * 2
   ctx.stroke()
 }
+
+incrementBtn.addEventListener('click', () => {
+  size += 3
+  if (size > 50) size = 50
+  updateSizeOnScreen()
+})
+
+decrementBtn.addEventListener('click', () => {
+  size -= 3
+  if (size < 5) size = 5
+  updateSizeOnScreen()
+})
