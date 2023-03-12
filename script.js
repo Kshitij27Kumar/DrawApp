@@ -28,7 +28,7 @@ canvas.addEventListener('mousemove', (e) => {
   if (isPressed) {
     const x1 = e.offsetX
     const y1 = e.offsetY
-    drawLine(x1, y1)
+    drawLine(x, y, x1, y1)
     drawCircle(x1, y1)
     x = x1
     y = y1
@@ -40,4 +40,13 @@ drawCircle = (x, y) => {
   ctx.arc(x, y, size, 0, MATH * PI * 2)
   ctx.fillStyle = color
   ctx.fill()
+}
+
+drawLine = (x, y, x1, y1) => {
+  ctx.beginPath()
+  ctx.moveTo(x, y)
+  ctx.lineTo(x1, y1)
+  ctx.strokeStyle = color
+  ctx.lineWidth = size * 2
+  ctx.stroke()
 }
