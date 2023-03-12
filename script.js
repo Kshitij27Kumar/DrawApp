@@ -11,3 +11,26 @@ let isPressed = false
 let color = 'black'
 let x = undefined
 let y = undefined
+
+canvas.addEventListener('mousedown', (e) => {
+  isPressed = true
+  x = e.offsetX
+  y = e.offsetY
+})
+
+canvas.addEventListener('mouseup', (e) => {
+  isPressed = false
+  x = undefined
+  y = undefined
+})
+
+canvas.addEventListener('mousemove', (e) => {
+  if (isPressed) {
+    const x1 = e.offsetX
+    const y1 = e.offsetY
+    drawLine(x1, y1)
+    drawCircle(x1, y1)
+    x = x1
+    y = y1
+  }
+})
