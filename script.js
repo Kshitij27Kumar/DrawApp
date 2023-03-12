@@ -34,3 +34,10 @@ canvas.addEventListener('mousemove', (e) => {
     y = y1
   }
 })
+
+drawCircle = (x, y) => {
+  ctx.beginPath()
+  ctx.arc(x, y, size, 0, MATH * PI * 2)
+  ctx.fillStyle = color
+  ctx.fill()
+}
